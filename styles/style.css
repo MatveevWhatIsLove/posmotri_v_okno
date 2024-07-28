@@ -9,6 +9,9 @@ html {
 }
 
 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -36,3 +39,269 @@ ul,
 ol {
   list-style: none;
 }
+
+.content{
+  width: 1140px;
+  display: flex;
+  align-items: flex-end;
+  gap: 30px;
+}
+
+.result{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.result__video-container{
+  padding-top: 78px;
+  position: relative;
+}
+
+
+.result__video{
+  width: 711px;
+  height: 386px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.button{
+  height: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Состояния кнопки */
+.button:focus{
+  outline: none;
+}
+
+.button:focus-visible{
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.button:hover{
+  text-decoration: underline;
+}
+
+.button:active{
+  background: #545050;
+}
+
+/* Форма под видосом */
+
+/* Убираем флаги */
+.visually-hidden{
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+/* убрали */
+
+.search-form{
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  position: relative;
+}
+
+.search-form__fieldset{
+  border: none;
+}
+
+.search-form__fieldset-title{
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+/* поиск города */
+.search-form__textfield{
+  width: 225px;
+  height: 27px;
+  border: none;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Состояния поиска города */
+
+.search-form__textfield:active{
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+  padding-left: 1px;
+}
+
+.search-form__textfield:focus{
+  outline: none;
+}
+
+.search-form__textfield::placeholder{
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Выбор времени суток */
+
+.search-form__label{
+  display: flex;
+  gap: 5px;
+}
+/* Состояния чекбокса */
+.search-form__label:has(:focus-visible){
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__checkbox-list{
+  display: flex;
+  gap: 15px;
+}
+
+.search-form__pseudo-checkbox{
+  width: 19px;
+  height: 19px;
+  border: 1px solid #fff;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.search-form__label:has(.search-form__pseudo-checkbox):has(:hover){
+  text-decoration: underline;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox{
+  border: 2px solid #000;
+  outline: 1px solid #fff;
+  outline-offset: -1px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/*Кнопка Найти */
+.search-form__submit-button{
+  width: 194px;
+  margin-top: auto
+}
+
+/* Кнопка показать еще */
+.more-button{
+  width: 100%;
+}
+
+/* Посмотри в окно */
+.title{
+  font-family: Oswald;
+  font-weight: bold;
+  font-size: 75px;
+  line-height: 94%;
+  margin-bottom: 26px;
+  text-transform: uppercase;
+}
+
+.content__list{
+  position: relative;
+  height: 298px;
+  overflow-y: scroll;
+}
+
+/* Скрываем scrollbar для Chrome, Safari и Opera */
+.content__list::-webkit-scrollbar{
+  display: none;
+}
+/* Скрываем scrollbar для IE, Edge и Firefox */
+.content__list{
+  -ms-overflow-style: none; /* IE и Edge */
+  scrollbar-width: none;
+}
+
+/* Начало стилизации карточек со скоролом сбоку */
+.content__list .content__list-item:not(:last-child){
+  margin-bottom: 30px;
+}
+
+
+.content__list-item:has(.content__card-link_current){
+  background-color: #545050;
+}
+
+.content__accent{
+  color: #545050;
+}
+
+
+.content__card-link{
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+/* Карточка сбоку эффекты*/
+
+.content__card-link:active{
+  background-color: #545050;
+}
+
+.content__card-link:focus{
+  outline: none;
+}
+
+.content__card-link:focus-visible{
+  outline: 1px solid #fff;
+  outline-offset: -1px;
+}
+
+.content__card-link:hover{
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+/* конец карточки сбоку эффекты*/
+
+.content__video-card{
+  display: flex;
+}
+
+.content__video-card-description-container{
+  flex-grow: 1;
+}
+
+.content__video-card-title{
+  margin-bottom: 6px;
+  font-family: Oswald;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+.content__video-card-description{
+  width: 200px;
+  line-height: 16.2px;
+}
+
+.content__video-card-thumbnail{
+  width: 194px;
+  height: 103px;
+  object-fit: cover;
+}
+/* Конец стилизации карточек сбоку */
